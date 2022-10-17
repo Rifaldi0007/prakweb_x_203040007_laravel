@@ -1,0 +1,9 @@
+Session 6
+Laravel
+    "Laravel is a web application framework with expressive,elegant syntax."
+    Keywords > "Web application framework"
+Web application framework?
+-Sebuah 'kerangka' yang didesain untuk mendukung pembangunan aplikasi web
+-menyediakan standar/ cara untuk membangun aplikasi web.
+-bertujuan untuk mengotomasi hal-hal umum yang biasanya dilakukan saat membangun aplikasi web.
+contohnya: database library,templating engine,Session management,authentication,security,dll.
