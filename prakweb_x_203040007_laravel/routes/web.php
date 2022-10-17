@@ -18,9 +18,14 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', [
+        "name" => "Faldi arsandi",
+        "email" => "rifaldia513@gmail.com",
+        "image" => "Faldi.jpg"
+    ]);
 });
 
 Route::get('/blog', function () {
     return view('posts');
 });
+
