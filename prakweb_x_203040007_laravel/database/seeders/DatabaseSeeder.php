@@ -32,18 +32,21 @@ class DatabaseSeeder extends Seeder
         //]);
 
         User::factory(3)->create();
-
         Category::create([
-            'name'=> 'Programming',
-            'slug'=> 'Programming'
+            'name' => 'Web Programming',
+            'slug' => 'web-programming'
         ]);
 
         Category::create([
-            'name'=> 'Personal',
-            'slug'=> 'Personal'
+            'name' => 'Web Design',
+            'slug' => 'web-design'
         ]);
 
-        Post::factory(10)->create();
+        Category::create([
+            'name' => 'Personal',
+            'slug' => 'personal'
+        ]);
+        Post::factory(20)->create();
 
         //Post::create([
         //    'title' => 'Judul Pertama',
