@@ -8,10 +8,7 @@ class Post extends Model
     // protected $fillable = ['title', 'excerpt', 'body'];
     protected $guarded = ['id'];
     protected $with = ['category', 'author'];
-<<<<<<< HEAD
-=======
 
->>>>>>> main
 
     public function category()
     {
