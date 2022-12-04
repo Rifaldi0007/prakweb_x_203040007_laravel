@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Faker\Provider\Lorem;
+use Illuminate\Support\Str;
 
 class DashboardPostController extends Controller
 {
@@ -42,7 +43,19 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $validateData = $request->validate([
+            'title' => 'required|max:255',
+            'slug' => 'required|unique:posts',
+            'category_id' => 'required',
+            'body' => 'required'
+        ]);
+
+        $validateData['user_id'] = auth()->user()->id;
+        $validateData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+
+        Post::create($validateData);
+
+        return redirect('/dashboard/posts')->with('success', 'New post has been added!');
     }
 
     /**
@@ -98,3 +111,4 @@ class DashboardPostController extends Controller
         return response()->json(['slug' => $slug]);
     }
 }
+
